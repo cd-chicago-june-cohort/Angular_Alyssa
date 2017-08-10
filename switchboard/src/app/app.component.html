@@ -1,0 +1,5 @@
+<h1>Switchboard</h1>
+<div id='switches'>
+  <div class='button' *ngFor = 'let button of buttons, let idx = index' [ngClass]="{ 'on': button === 'on', 'off': button === 'off'}" (click)='change_button(idx)'>{{button}}
+</div>
+
