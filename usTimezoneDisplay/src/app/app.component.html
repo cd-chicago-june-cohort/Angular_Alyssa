@@ -1,0 +1,13 @@
+<div id='container'>
+  <h1>US Time Zone Display</h1>
+  <div id='buttons'>
+    <button (click)='updateTime("PST")' [ngClass]="{ 'on': zone === 'PST' }">PST</button>
+    <button (click)='updateTime("MST")' [ngClass]="{ 'on': zone === 'MST' }">MST</button>
+    <button (click)='updateTime("CST")' [ngClass]="{ 'on': zone === 'CST' }">CST</button>
+    <button (click)='updateTime("EST")' [ngClass]="{ 'on': zone === 'EST' }">EST</button>
+    <button (click)='clear()'>Clear</button>
+  </div>
+  <div id='time'>
+         <h1 [ngClass]="{ 'hide': hide }">{{ time | date:'medium'}}</h1>     
+  </div> 
+</div>
