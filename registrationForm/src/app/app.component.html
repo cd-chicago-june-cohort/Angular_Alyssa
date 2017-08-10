@@ -1,0 +1,76 @@
+<h1>Registration</h1>
+<div id='form_container'>
+  <div *ngIf='success_message'>
+    <p class='green'>Thank you for registering with us {{user.first_name}}.  We just sent you a confirmation email at {{user.email}}, and we will send all maill to {{user.street_address}}<span *ngIf='user.unit_apt_no'> {{user.unit_apt_no}}</span>, {{user.city}} {{user.state}}.</p>
+    <p>Have a wonderful day!</p>
+  </div>
+  <h2>Account Information</h2>
+  <div id='form_inputs'>
+    <form action="" #formData='ngForm' (submit)='onSubmit()'>
+    <p>*First Name:  <input
+      type="text" 
+      name="first_name"
+      required
+      [(ngModel)]='user.first_name'
+      #first_name = 'ngModel'
+      > <span *ngIf='first_name.errors!=null'>First name is required</span></p>
+    <p>*Last Name:  <input 
+      type="text" 
+      name="last_name"
+      required
+      [(ngModel)]='user.last_name'
+      #last_name = 'ngModel'
+      > <span *ngIf='last_name.errors!=null'>Last name is required</span></p>
+    <p>*Email:  <input 
+      type="text" 
+      name="email"
+      required
+      pattern='([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$'
+      [(ngModel)]='user.email'
+      #email = 'ngModel'
+      > <span *ngIf='email.errors!=null'>Email must be valid</span></p>
+    <p>*Password:  <input 
+      type="password" 
+      name="password"
+      required
+      minlength = '16'
+      [(ngModel)]='user.password'
+      #password = 'ngModel' 
+      > <span *ngIf='password.errors!=null'>Password must be at least 16 characters long</span></p>
+    <p>*Password Confirmation:  <input 
+      type="password" 
+      name="confirm"
+      [(ngModel)]='confirm'
+      (change)='check_pwconfirm()'
+      > <span *ngIf='!confirm_valid'>Password confirmation must match password</span></p>
+    <p>*Street Address:  <input 
+      type="text" 
+      name="street_address"
+      required
+      [(ngModel)]='user.street_address'
+      #street_address = 'ngModel'
+      > <span *ngIf='street_address.errors!=null'>Address is required</span></p>
+    <p>Unit/Apt #:  <input 
+      type="text" 
+      name="unit_apt_no"
+      [(ngModel)]='user.unit_apt_no'
+      ></p>
+    <p>*City:  <input 
+      type="text" 
+      name="city"
+      required
+      [(ngModel)]='user.city'
+      #city = 'ngModel'
+      > <span *ngIf='city.errors!=null'>City is required</span></p>
+    <p>*State:  
+      <select name='state' [(ngModel)]='user.state'>
+        <option *ngFor='let state of states' value='{{state}}'>{{state}}</option>
+      </select></p>
+    <p>*I'm feeling lucky:  
+      <input type="radio" name='lucky' value='yes' required [(ngModel)]='user.lucky' #lucky = 'ngModel'>Yes
+      <input type="radio" name='lucky' value='no' required [(ngModel)]='user.lucky' #lucky = 'ngModel'>No
+      <span *ngIf='lucky.errors!=null'>Choosing how you feel is required</span>
+    </p>
+     <input type="submit" value='Register' [disabled]='!formData.valid'> 
+    </form>
+  </div>
