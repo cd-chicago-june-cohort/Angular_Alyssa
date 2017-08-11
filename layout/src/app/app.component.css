@@ -1,0 +1,22 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+app-header{
+    width: 100%;
+}
+
+app-nav{
+    display: inline-block;
+    width: 30%;
+    margin-top: 20px;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+app-main{
+    display: inline-block;
+    width: 66.4%;
+    margin-top: 20px;
+    vertical-align: top;
+}

@@ -1,0 +1,19 @@
+div{
+    background-color: #99C3FA;
+    border: 1px solid black;
+    height: 200px;
+    vertical-align: top;
+}
+
+p{
+    font-size: 75%;
+}
+
+ #label{
+    margin-top: 0px;
+    padding: 1px;
+}
+
+.text{
+    padding-left: 10px;
+}
