@@ -1,0 +1,16 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#add_quote_form{
+    display: inline-block;
+}
+
+#validation_messages{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.red{
+    color: red;
+}

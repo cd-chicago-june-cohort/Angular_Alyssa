@@ -1,0 +1,32 @@
+<h1>Add a Quote</h1>
+<div id='add_quote_form'>
+  <form action="" #formData='ngForm' (submit)='onSubmit()'>
+    <textarea name="content" cols="30" rows="10"
+      required
+      minlength='4'
+      [(ngModel)]='quote.content'
+      #content = 'ngModel'
+    ></textarea>
+    <p>Author  <input 
+      type="text" 
+      name="author"
+      required
+      minlength="1"
+      [(ngModel)]='quote.author'
+      #author = 'ngModel'
+      ></p>
+    <input type="submit" value='Add Quote' [disabled]='!formData.valid'> 
+  </form>
+</div>
+<div id='validation_messages'>
+  <p class = 'red' *ngIf='content.errors && content.errors.required'>Quote is required</p>
+  <p class = 'red' *ngIf='content.errors && content.errors.minlength'>Quote must be at least 4 characters</p>
+  <p class = 'red' *ngIf='author.errors && author.errors.required'>Author is required</p>
+</div>
+<h1>Quotes List</h1>
+<app-show-quote 
+  *ngFor='let quote of quotes, let idx=index' 
+  [quote]=quote
+  (voteEmitter)='changeVote($event, idx)' 
+  (deleteEmitter)='destroy(idx)' 
+></app-show-quote>

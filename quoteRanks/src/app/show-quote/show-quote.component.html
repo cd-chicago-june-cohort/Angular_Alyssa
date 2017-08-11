@@ -1,0 +1,14 @@
+<div id='container'>
+  <div id='content' class='quote_div'>
+    <p>"{{quote.content}}"</p>
+    <p>- {{quote.author}}</p>
+  </div>
+  <div id='score' class='quote_div'>
+    <h3><span *ngIf='quote.votes>0'>+</span>{{quote.votes}}</h3>
+  </div>
+  <div id='buttons' class='quote_div'>
+    <button id='up'(click)='upVote()'>Vote Up</button>
+    <button id='down' (click)='downVote()'>Vote Down</button>
+    <button id='delete' (click)='destroy()'>Delete</button>
+  </div>
+</div>
