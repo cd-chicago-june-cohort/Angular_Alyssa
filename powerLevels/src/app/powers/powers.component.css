@@ -1,0 +1,20 @@
+#container{
+    border: 1px solid black;
+    width: 30%;
+    height: 125px;
+    margin: 5px;
+    display: inline-block;
+    background-color: #FFFAE5;
+    vertical-align: top;
+}
+
+p{
+    font-size: 75%;
+    margin: -8px 0 0 5px;
+    background-color: #FFFAE5;
+    display: table;
+}
+
+h5{
+    margin-left: 15px;
+}

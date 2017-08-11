@@ -1,0 +1,15 @@
+<div id='container'>
+  <p>PowerComponent</p>
+  <h3>Initial Power Levels: 
+  <form action="" (submit)='onSubmit()'>
+    <select name="init_power_level" [(ngModel)]='init_power_level' >
+      <option *ngFor='let number of select_options' value={{number}}>{{number}}</option>
+    </select>
+    <input type="submit" value='Calculate Powers'>
+  </form>
+  </h3>  
+  <div id='power_levels'>
+    <app-powers *ngFor='let level of levels' [level]=level></app-powers>
+  </div>
+</div>
+
