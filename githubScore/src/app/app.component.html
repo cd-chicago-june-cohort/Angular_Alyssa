@@ -1,0 +1,13 @@
+<div id='container'>
+  <h1>GitHub Score</h1>
+  <div class='interior'>
+    <form action="" (submit)='onSubmit()' #formData = 'ngForm'>
+      <p>Github Username: <input type="text" name = 'name' required [(ngModel)]='name'></p>
+      <input type="submit" value='Calculate my Github Score' [disabled]='!formData.valid'>
+    </form>
+  </div>
+  <div class='interior' *ngIf='user.score'> 
+    <h2>Your Score: {{user.score}}</h2>
+    <p [ngStyle]="{'color':user.color}" >{{user.message}}</p>
+  </div>
+</div>
