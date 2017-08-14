@@ -4,13 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ShowQuoteComponent } from './show-quote/show-quote.component';
-import { AddQuoteComponent } from './add-quote/add-quote.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowQuoteComponent,
-    AddQuoteComponent
   ],
   imports: [
     BrowserModule,

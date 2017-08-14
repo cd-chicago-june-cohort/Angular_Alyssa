@@ -1,0 +1,9 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+li{
+    display: inline-block;
+    margin: 0 15px;
+}
