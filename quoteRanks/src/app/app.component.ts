@@ -19,6 +19,9 @@ export class AppComponent {
       author: '',
       votes: 0,
     }
+    this.quotes.sort(function(a,b){
+      return b.votes - a.votes;
+    })
   }
   changeVote(eventData, index){
     this.quotes[index].votes += eventData;
