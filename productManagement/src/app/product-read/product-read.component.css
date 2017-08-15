@@ -1,0 +1,29 @@
+div{
+    background-color: white;
+    text-align: center;
+    height: 350px;
+    width: 100%;
+    border: 1px solid black;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+img{
+    height: 50%;
+}
+
+button{
+    display: block;
+    width: 70%;
+    margin: 5px auto;
+}
+
+#edit{
+    background-color: orange;
+}
+
+#delete{
+    color: white;
+    background-color: red;
+}

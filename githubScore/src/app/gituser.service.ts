@@ -10,6 +10,6 @@ export class GituserService {
   constructor(private _http: Http) { }
   retrieveUser(name){
     let api_string = 'https://api.github.com/users/' + name
-    return this._http.get(api_string).map(data => data.json()).toPromise();
+    return this._http.get(api_string, 1a56de2805a24ddcab15ef6ae13fc131c3809fce).map(data => data.json()).toPromise();
   }
 }

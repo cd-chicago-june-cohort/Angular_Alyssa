@@ -7,8 +7,6 @@ import { DCComponent } from './dc/dc.component';
 import { SanJoseComponent } from './san-jose/san-jose.component';
 import { SeattleComponent } from './seattle/seattle.component';
 
-
-
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: '/chicago'}, 
   {path: 'burbank', component: BurbankComponent},
